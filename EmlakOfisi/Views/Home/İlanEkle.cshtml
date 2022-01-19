@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "İlanEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class=" form-group " method="post">
+    <p>.</p>
+    <div>
+        <label>Emlakçı ID:</label>
+        <input type="number" class=" form-control" name="EmlakciID" />
+    </div>
+    <div>
+        <label>İlan Tarihi:</label>
+        <input type="datetime" class=" form-control" name="İlanTarihi" />
+    </div>
+    <div>
+        <label>Açıklama:</label>
+        <input type="text" class=" form-control" name="Aciklama" />
+
+
+    </div>
+    <div>
+        <label>Oda Sayısı:</label>
+        <input type="number" class=" form-control" name="OdaSayisi" />
+    </div>
+    <div>
+        <label>Bina Yaşı:</label>
+        <input type="number" class=" form-control" name="BinaYasi" />
+        <div>
+            <label>Balkon:</label>
+            <input type="text" class=" form-control" name="Balkon" />
+        </div>
+        <div>
+            <label>Adres:</label>
+            <input type="text" class=" form-control" name="Adres" />
+        </div>
+        <div>
+            <label>Fiyat:</label>
+            <input type="text" class=" form-control" name="Fiyat" />
+        </div>
+
+    </div>
+
+
+
+    <br />
+    <button class=" btn btn-info">İLAN EKLE</button>
+
+</form>
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Rol Ekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*Rol ekleme işlemleri*@
+<form class=" form-group " action="/Rol/RolEkle" method="post">
+    <p><b>Yeni Rol Atama</b></p>
+
+    <div>
+        <label>Rol:</label>
+        <input type="text" class=" form-control" name="RolAdi" placeholder="Rol Giriniz" />
+    </div>
+  
+    <br />
+    <button class=" btn btn-info">Kaydet</button>
+
+</form>
+
+

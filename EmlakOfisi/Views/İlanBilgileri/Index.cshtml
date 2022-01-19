@@ -1,0 +1,76 @@
+﻿@model IEnumerable<EmlakOfisi.Models.Entity.İlanBilgileri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Emlakci.EmlakciAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.İlanTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OdaSayisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BinaYasi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balkon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emlakci.EmlakciAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.İlanTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OdaSayisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BinaYasi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balkon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.İlanID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.İlanID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.İlanID })
+        </td>
+    </tr>
+}
+
+</table>

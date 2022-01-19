@@ -1,0 +1,67 @@
+﻿@model EmlakOfisi.Models.Entity.Emlakci
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Detay</h2>
+
+<div>
+    <h4>Emlakci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmlakciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmlakciAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirmaAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KullaniciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmlakciID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

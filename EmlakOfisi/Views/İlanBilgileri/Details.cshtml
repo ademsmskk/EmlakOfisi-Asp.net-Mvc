@@ -1,0 +1,83 @@
+﻿@model EmlakOfisi.Models.Entity.İlanBilgileri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>İlanBilgileri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Emlakci.EmlakciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emlakci.EmlakciAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İlanTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İlanTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OdaSayisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OdaSayisi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BinaYasi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BinaYasi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balkon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balkon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.İlanID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

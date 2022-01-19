@@ -1,0 +1,25 @@
+﻿
+
+@using EmlakOfisi.Models.Entity;
+@model EmlakOfisi.Models.Entity.Resimler
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<h2>Resim Ekleme Formu</h2>
+<br />
+<br />
+
+@using (Html.BeginForm("Ekle", "Resim", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <p>Resim Seç</p>
+    @*@Html.TextBoxFor(x => x.OrtaYol);*@
+    <input type="file" name="OrtaYol"/>
+    <br /><br />
+    <input type="submit" value="Kaydet"/>
+    
+}         

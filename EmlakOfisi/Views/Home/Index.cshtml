@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@using EmlakOfisi.Models.Entity;
+
+@model List<İlanBilgileri>
+
+<a href="/Home/İlanEkle/ " class=" btn btn-primary">Yeni İlan Ekle Ekle</a>
+<table class=" table table-bordered">
+    <tr>
+        <th>İlan ID</th>
+        <th>İlan Tarihi</th>
+        <th>Emlakçı Adı</th>
+        <th>Açıklama</th>
+        <th>Telefon</th>
+        <th>Oda Sayısı</th>
+        <th>Bina Yaşı</th>
+        <th>Balkon</th>
+        <th>Adres</th>
+        <th>Fiyat</th>
+        <th>İlan Resmi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+
+        @foreach (İlanBilgileri ilan in Model)
+        {
+        <tr>
+            <td>@ilan.İlanID</td>
+            <td>@ilan.İlanTarihi</td>
+            <td>@ilan.Emlakci.EmlakciAdi  </td>
+            <td>@ilan.Aciklama</td>
+            <td>@ilan.Emlakci.Telefon</td>
+            <td>@ilan.OdaSayisi</td>
+            <td>@ilan.BinaYasi </td>
+            <td>@ilan.Balkon</td>
+            <td>@ilan.Adres</td>
+            <td>@ilan.Fiyat</td>
+           
+
+
+            @*<td>@ilan.Resimler.OrtaYol</td>*@
+            <td><a href="/Resim/Index/@ilan.ResimID/" class=" btn btn-danger">Resmi Gör</a></td>
+            <td><a href="#" class=" btn btn-danger">SİL</a></td>
+            <td><a href="#" class="btn btn-success">GÜNCELLE</a></td>
+
+        </tr>
+
+        }
+
+
+
+    </tbody>
+</table>
+
+
+

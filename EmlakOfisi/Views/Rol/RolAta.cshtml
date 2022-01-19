@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Rol Ata";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class=" form-group " action="/Rol/RolAta" method="post">
+    <p><b> Rol Atama Sayfası</b></p>
+
+    <div>
+        <label>Kullancı Adı:</label>
+      <select name="KullaniciAdi" class="form-control">
+          @foreach (MembershipUser user in ViewBag.Kullanicilar)
+          {
+            <option value="@user.UserName">
+                @user.UserName
+            </option>
+          }
+
+      </select>
+
+    </div>
+    <div>
+        @*Rolleri select ile gösterme işlemi*@
+        <label>Rol:</label>
+        <select name="RolAdi" class=" form-control">
+            @foreach (string rol in ViewBag.Roller)
+            {
+                <option value="@rol">
+                    @rol
+                </option>
+
+            }
+
+        </select>
+    </div>
+    <br />
+    <button class=" btn btn-info">Kaydet</button>
+
+</form>
+

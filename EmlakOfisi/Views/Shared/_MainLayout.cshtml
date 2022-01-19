@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Emlak Ofisi-@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", false);
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Home/Index">EMLAK OFİSİ</a>
+            </div>
+            <div class=" navbar-right">
+                <P style=" color:wheat">MERHABA-@User.Identity.Name.ToUpper()-</P>
+                <br />
+                <a href="/Uye/CikisYap" style=" color:red">Çıkış Yap</a>
+            </div>
+            <ul class="nav navbar-nav">
+
+                <li><a href="/Home/Index">İlanlar</a></li>
+                <li><a href="/Emlakci/Index">Emlakçılar</a></li>
+                <li class="active"><a href="/Kullanici/Index">Kullanıcılar</a></li>
+                <li class="active"><a href="/Rol/Index">Roller</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

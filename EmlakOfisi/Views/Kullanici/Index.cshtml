@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Emlakçılar";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@using System.Web.Security;
+
+@*model yöntemi ile veri çekiyoruz.*@
+@model MembershipUserCollection
+
+
+@* Kullanıcı ekleme ve kullanıcıları gösterme işlemleri *@
+
+<a href="/Kullanici/KullaniciEkle/ " class=" btn btn-primary">Yeni Emlakçı Ekle</a>
+<a class=" btn btn-primary" href="/Rol/RolAta">Rol Ekle</a>
+<br />  
+<br />
+@* tablo oluşturma *@
+
+<table class=" table table-bordered">
+    <tr>
+        <th>Kullanıcı Adı</th>
+        <th>E mail</th>
+        <th>Kayıt Tarihi</th>
+        <th>Son Giriş</th>
+        <th>Rolleri</th>
+        <th>Sil</th>
+       
+    </tr>
+
+    <tbody>
+        @*Bu fonskiyon ile modelin içinde gezerek kullanıcı biliglerini tablo içine yazdırılır. *@
+        @foreach (MembershipUser us in Model)
+        {
+            <tr>
+                <td>@us.UserName</td>
+                <td>@us.Email</td>
+                <td>@us.CreationDate</td>
+                <td>@us.LastLoginDate</td>
+                <td><a class="btn btn-primary rolleri" data-uyeadi="@us.UserName">Rolleri</a></td>
+              
+               @* Kullanıcı silme işlemi. *@
+                <td><a href="/#/" class=" btn btn-danger uyeSil" data-uyeadi="@us.UserName">SİL</a></td>
+                
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+@section scripts{
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(".rolleri").click(function () {
+            var ka = $(this).data("uyeadi");
+            $.ajax({
+                type: "POST",
+                url: "/Rol/UyeRolleri/",
+                data: {kadi:ka},
+                success: function (veri) {
+                    alert(veri);
+                }
+
+
+            });
+
+        });
+
+    </script>
+    
+    }
+

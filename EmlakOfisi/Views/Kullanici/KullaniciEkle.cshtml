@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Emlakçı Ekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@*Form açıldı formun tipi veri göndereceğinden post tipindedir*@
+
+<form class=" form-group " action="/Kullanici/KullaniciEkle" method="post">
+    <p><b>Yeni Emlakçı Ekleme</b></p>
+
+    <div>
+        <label>Kullanıcı Adı:</label>
+        <input type="text" class=" form-control" name="KullaniciAdi" placeholder="Kullanıcı Adı Giriniz" />
+    </div>
+    <div>
+        <label>Parola:</label>
+        <input type="password" class=" form-control" name="Parola" placeholder="Parola Giriniz" />
+
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="text" class=" form-control" name="Email" placeholder="Email Giriniz" />
+    </div>
+    <div>
+        <label>Fİrma Adı:</label>
+        <input type="text" class=" form-control" name="FirmaAdi" placeholder="Firma Adı Giriniz" />
+    </div>
+    <div>
+        <label>Firma Adını Tekrar Giriniz:</label>
+        <input type="text" class=" form-control" name="FirmaAdiTekrar" placeholder="Firma Adını Tekrar Giriniz" />
+    </div>
+    <br />
+    <button class=" btn btn-info">Kaydet</button>
+
+</form>
+@* Kullanıcı ekleme sırasında oluşabilcek hataları gösterir. *@
+<span style="color:red;font-size:16px;">@ViewBag.Mesaj.</span>
